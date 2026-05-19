@@ -45,6 +45,17 @@
     max-width: 32rem;
     line-height: 1.5;
   }
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    z-index: 10;
+  }
   details.services {
     position: relative;
     font-size: 1rem;
@@ -53,7 +64,7 @@
   details.services > summary {
     list-style: none;
     cursor: pointer;
-    padding: 0.6rem 1.25rem;
+    padding: 0.5rem 1.1rem;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 999px;
     color: var(--fg);
@@ -76,8 +87,8 @@
     margin: 0.5rem 0 0;
     padding: 0.5rem 0;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 100%;
+    right: 0;
     min-width: 14rem;
     background: #17171c;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -99,15 +110,17 @@
 </style>
 </head>
 <body>
-  <main>
-    <h1>Love<span class="heart">It</span> Labs</h1>
-    <p>We build things we love.</p>
+  <nav>
     <details class="services">
       <summary>Services</summary>
       <ul>
         <li><a href="https://loveitlabs.co.za">Homepage</a></li>
       </ul>
     </details>
+  </nav>
+  <main>
+    <h1>Love<span class="heart">It</span> Labs</h1>
+    <p>We build things we love.</p>
   </main>
 </body>
 </html>
