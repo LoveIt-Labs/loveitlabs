@@ -1,127 +1,338 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-mode="dark" data-accent="pink" data-motion="chaos" style="--font-display: 'Fraunces', 'Times New Roman', serif;">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LoveIt Labs</title>
-<meta name="description" content="LoveIt Labs — building things we love.">
-<style>
-  :root {
-    --bg: #0f0f12;
-    --fg: #f5f5f7;
-    --muted: #9a9aa3;
-    --accent: #ff5577;
-  }
-  * { box-sizing: border-box; }
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  main {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    text-align: center;
-  }
-  h1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    font-weight: 700;
-    margin: 0 0 0.5rem;
-    letter-spacing: -0.02em;
-  }
-  h1 .heart { color: var(--accent); }
-  p {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    color: var(--muted);
-    margin: 0 0 2rem;
-    max-width: 32rem;
-    line-height: 1.5;
-  }
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    z-index: 10;
-  }
-  details.services {
-    position: relative;
-    font-size: 1rem;
-    user-select: none;
-  }
-  details.services > summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 0.5rem 1.1rem;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 999px;
-    color: var(--fg);
-    background: rgba(255, 255, 255, 0.03);
-    transition: background 0.15s ease, border-color 0.15s ease;
-  }
-  details.services > summary::-webkit-details-marker { display: none; }
-  details.services > summary:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.25);
-  }
-  details.services > summary::after {
-    content: " ▾";
-    color: var(--muted);
-    margin-left: 0.4rem;
-  }
-  details.services[open] > summary::after { content: " ▴"; }
-  details.services ul {
-    list-style: none;
-    margin: 0.5rem 0 0;
-    padding: 0.5rem 0;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    min-width: 14rem;
-    background: #17171c;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.75rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  }
-  details.services li { margin: 0; }
-  details.services a {
-    display: block;
-    padding: 0.6rem 1rem;
-    color: var(--fg);
-    text-decoration: none;
-    font-size: 0.95rem;
-  }
-  details.services a:hover {
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--accent);
-  }
-</style>
+<title>LoveIt Labs — we build the things we love</title>
+<meta name="description" content="LoveIt Labs is a tiny studio in Cape Town building software it can't stop thinking about. No roadmaps. No deadlines. Only obsession.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
+
+<!-- custom cursor -->
+<div class="cursor-blob" id="cursor"></div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<nav class="top">
+  <a href="#" class="brand" data-magnet>
+    <span class="heart" aria-hidden="true"></span>
+    <span>LoveIt&nbsp;Labs</span>
+  </a>
+  <div class="nav-right">
+    <span class="lab-time" id="lab-time">— : — : — SAST</span>
     <details class="services">
-      <summary>Services</summary>
+      <summary data-magnet>Services</summary>
       <ul>
-        <li><a href="https://padel.loveitlabs.co.za">Padel</a></li>
-        <li><a href="https://spotted.loveitlabs.co.za">Spotted</a></li>
+        <li><a href="https://padel.loveitlabs.co.za">Padel <span class="arrow">↗</span></a></li>
+        <li><a href="https://spotted.loveitlabs.co.za">Spotted <span class="arrow">↗</span></a></li>
       </ul>
     </details>
-  </nav>
-  <main>
-    <h1>Love<span class="heart">It</span> Labs</h1>
-    <p>We build things we love.</p>
-  </main>
+  </div>
+</nav>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="hero">
+  <div class="container">
+
+    <div class="lab-log">
+      <span class="dot" aria-hidden="true"></span>
+      <span>LAB&nbsp;LOG · entry 0237</span>
+      <span>·</span>
+      <span>building publicly since 2024</span>
+    </div>
+
+    <h1>
+      We build<br>
+      the things<br>
+      we <span class="rotator" id="rotator" aria-live="polite"><span class="current">love</span></span><span class="punct">.</span>
+    </h1>
+
+    <div class="hero-foot">
+      <p class="blurb">
+        <strong>LoveIt Labs</strong> is a tiny studio in Cape Town shipping
+        software it can't stop thinking about. No roadmaps. No quarterly OKRs.
+        Just whichever obsession is loudest this week.
+      </p>
+
+      <div class="ecg" aria-label="studio heartbeat">
+        <svg width="120" height="22" viewBox="0 0 120 22" fill="none">
+          <path d="M0 11 H 26 L 32 4 L 40 18 L 48 8 L 54 14 L 60 11 H 120"
+                stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="bpm">72&nbsp;BPM</span>
+        <span>·</span>
+        <span>STUDIO ALIVE</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">scroll for the lab tour ↓</div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="marquee" aria-hidden="true">
+  <div class="track" id="marquee-track">
+    <span>no roadmaps</span><span class="sep">✺</span>
+    <span>only obsession</span><span class="sep">✺</span>
+    <span>ship when it sings</span><span class="sep">✺</span>
+    <span>deadlines are someone else's problem</span><span class="sep">✺</span>
+    <span>craft over scale</span><span class="sep">✺</span>
+    <span>we build what we'd use</span><span class="sep">✺</span>
+    <span>small bets, deep work</span><span class="sep">✺</span>
+    <span>if it doesn't fire us up it doesn't ship</span><span class="sep">✺</span>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="labs" id="labs">
+  <div class="container">
+
+    <div class="head-row">
+      <div>
+        <span class="section-tag">§01 / the lab bench</span>
+        <h2 class="section-head">Currently <span class="alt">in motion</span></h2>
+      </div>
+      <div class="right">
+        <span class="count">02</span>
+        live experiments<br>· one scheming
+      </div>
+    </div>
+
+    <div class="lab-grid">
+
+      <!-- ────────── padel ────────── -->
+      <a class="lab-card padel" href="https://padel.loveitlabs.co.za" data-magnet>
+        <div class="lab-art padel-art" aria-hidden="true"></div>
+        <div class="lab-head">
+          <div class="name">Padel<span style="color:var(--accent-3)">.</span></div>
+          <div class="meta">
+            <div class="status">LIVE</div>
+            <div>v1.2 · launched mar '25</div>
+            <div>cape&nbsp;town</div>
+          </div>
+        </div>
+        <div class="lab-body">
+          <strong>Scoring, matchmaking and rivalry tracking</strong> for the
+          padel-obsessed. Started because we kept losing track of who owed
+          whom a rematch. Turns out other people did too.
+        </div>
+        <div class="lab-foot">
+          <span class="visit">Open the court <span class="arr">→</span></span>
+          <span class="url">padel.loveitlabs.co.za</span>
+        </div>
+      </a>
+
+      <!-- ────────── spotted ────────── -->
+      <a class="lab-card spotted status-beta" href="https://spotted.loveitlabs.co.za" data-magnet>
+        <div class="lab-art spotted-art" aria-hidden="true"></div>
+        <div class="lab-head">
+          <div class="name">Spotted<span style="color:var(--accent)">.</span></div>
+          <div class="meta">
+            <div class="status">PUBLIC BETA</div>
+            <div>v0.4 · 312 spotters</div>
+            <div>cape&nbsp;town</div>
+          </div>
+        </div>
+        <div class="lab-body">
+          <strong>A spotting game for your city.</strong> Catch sight of
+          something — a yellow car, a Table Mountain cable, a stranger's dog
+          — log it, race your friends. Built because the walk to work was
+          getting boring.
+        </div>
+        <div class="lab-foot">
+          <span class="visit">Start spotting <span class="arr">→</span></span>
+          <span class="url">spotted.loveitlabs.co.za</span>
+        </div>
+      </a>
+
+      <!-- ────────── next ────────── -->
+      <div class="lab-card next status-scheming">
+        <div class="lab-head">
+          <div class="name">No.&nbsp;3</div>
+          <div class="meta">
+            <div class="status">SCHEMING</div>
+            <div>three contenders</div>
+            <div>loudest one wins</div>
+          </div>
+        </div>
+        <div class="lab-body">
+          We're sitting with three half-formed obsessions on the whiteboard.
+          Whichever one is still loud in two weeks gets a Friday and a
+          domain name.
+        </div>
+        <div class="lab-foot">
+          <span class="visit" style="opacity:0.7">Watch this space <span class="arr">→</span></span>
+          <span class="url">tbd · soon-ish</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="principles" id="principles">
+  <div class="container">
+
+    <span class="section-tag">§02 / house rules</span>
+    <h2 class="section-head">Six things we <span class="alt">do not</span> negotiate.</h2>
+
+    <div class="principles-grid">
+
+      <div class="principle">
+        <div class="num">01</div>
+        <div class="body">
+          <p>If we don't love it, we don't build it.</p>
+          <p>Every project on this site started with one of us going "wait, but what if…" out loud at an inconvenient time.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="num">02</div>
+        <div class="body">
+          <p>The brief is a problem we are personally stuck on.</p>
+          <p>No client work. No outside roadmap. We build the thing whose absence is annoying us today.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="num">03</div>
+        <div class="body">
+          <p>Beauty is the floor, not the ceiling.</p>
+          <p>If it ships ugly it isn't ready. Type, motion, micro-copy — all of it earns its keep.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="num">04</div>
+        <div class="body">
+          <p>Small bets, deep work, often.</p>
+          <p>We'd rather ship six small obsessions than one bloated quarterly plan. Easier to love. Easier to delete.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="num">05</div>
+        <div class="body">
+          <p>The roadmap is whatever we can't stop thinking about this week.</p>
+          <p>Yes that is a planning method. No we will not be writing it down.</p>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="num">06</div>
+        <div class="body">
+          <p>If you can feel us in the product, we did it right.</p>
+          <p>The opposite of generic is fingerprints. We try to leave plenty.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="bench" id="bench">
+  <div class="container">
+
+    <span class="section-tag">§03 / on the bench</span>
+    <h2 class="section-head">What we're <span class="alt">in love with</span> right now.</h2>
+
+    <div class="bench-list">
+      <div class="h">№</div>
+      <div class="h">the thing</div>
+      <div class="h">why it's here</div>
+      <div class="h">filed under</div>
+
+      <div class="bench-row">
+        <div class="num">01</div>
+        <div class="what">CSS view transitions</div>
+        <div class="why">Like a whole studio's animation budget shows up in two lines of CSS.</div>
+        <div class="tag">tech</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="num">02</div>
+        <div class="what">Sunday-afternoon padel</div>
+        <div class="why">Three sets, two beers, one product idea. Repeatable.</div>
+        <div class="tag">ritual</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="num">03</div>
+        <div class="what">Late-night domain shopping</div>
+        <div class="why">There's no thrill quite like a four-letter <code>.co.za</code> still being free.</div>
+        <div class="tag">vice</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="num">04</div>
+        <div class="what">Instrument Serif italic</div>
+        <div class="why">Half the personality of this page comes from this exact ‹e›.</div>
+        <div class="tag">type</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="num">05</div>
+        <div class="what">The walk along Sea Point promenade</div>
+        <div class="why">Where Spotted was sketched on a coffee napkin. Twice.</div>
+        <div class="tag">place</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="num">06</div>
+        <div class="what">Tiny tools nobody asked for</div>
+        <div class="why">A keystroke counter. A pomodoro that nags. A calculator that flirts. Yes please.</div>
+        <div class="tag">genre</div>
+      </div>
+
+      <div class="bench-row">
+        <div class="num">07</div>
+        <div class="what">Shipping on a Friday</div>
+        <div class="why">Whoever told you not to was working at a company we wouldn't work at.</div>
+        <div class="tag">attitude</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="footer-cta">
+  <div class="container">
+
+    <span class="big-heart" aria-hidden="true"></span>
+
+    <h2>Got something <span class="alt">you can't stop</span> thinking about?</h2>
+    <p style="color:var(--muted); max-width:42ch; margin:0 auto; line-height:1.5; font-size:17px;">
+      We don't do client work, but we collect obsessions. If yours is loud
+      enough, send it our way. Worst case you make a friend.
+    </p>
+
+    <div class="email-pill" data-magnet>
+      <span style="font-family:var(--font-mono); color:var(--muted); font-size:12px; letter-spacing:0.1em; text-transform:uppercase;">tell us →</span>
+      <span id="email-text" style="font-family:var(--font-mono); color:var(--fg);">hello@loveitlabs.co.za</span>
+      <button class="copy-btn" id="copy-btn" type="button" data-magnet>Copy</button>
+    </div>
+
+    <div class="colophon">
+      <span>© LoveIt Labs · Cape Town · est. 2024</span>
+      <span id="footer-time">— : —</span>
+      <span>
+        <a href="https://padel.loveitlabs.co.za" data-magnet>padel↗</a>
+        &nbsp;·&nbsp;
+        <a href="https://spotted.loveitlabs.co.za" data-magnet>spotted↗</a>
+      </span>
+    </div>
+
+  </div>
+</section>
+<script src="interactions.js"></script>
+
+
 </body>
 </html>
