@@ -604,67 +604,6 @@ html[data-motion="chaos"] .marquee .track { animation-duration: 18s; }
   max-width: 44ch;
 }
 
-/* ─── bench ────────────────────────────────────────────────── */
-.bench {
-  padding: 120px 0;
-  border-top: 1px solid var(--line);
-}
-.bench-list {
-  display: grid;
-  grid-template-columns: 80px 1fr 1fr 120px;
-  gap: 0;
-  margin-top: 40px;
-}
-.bench-list .bench-row {
-  display: contents;
-}
-.bench-list .bench-row > * {
-  padding: 22px 12px;
-  border-top: 1px solid var(--line);
-  font-size: 16px;
-  line-height: 1.4;
-  display: flex;
-  align-items: center;
-  transition: color .25s, background .25s;
-}
-.bench-list .bench-row:last-child > * { border-bottom: 1px solid var(--line); }
-.bench-list .bench-row:hover > * { background: color-mix(in oklab, var(--accent) 5%, transparent); color: var(--fg); }
-
-.bench-list .h {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 14px 12px;
-  border-top: none;
-}
-.bench-list .num {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--muted);
-}
-.bench-list .what {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(20px, 2vw, 28px);
-  letter-spacing: -0.01em;
-}
-.bench-list .why {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.4;
-}
-.bench-list .tag {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-  justify-self: end;
-  justify-content: flex-end;
-}
-
 /* ─── footer cta ───────────────────────────────────────────── */
 .footer-cta {
   padding: 140px 0 80px;
@@ -752,8 +691,6 @@ html[data-motion="chaos"] .marquee .track { animation-duration: 18s; }
   .lab-card.next { grid-column: span 1; }
   .principles-grid { grid-template-columns: 1fr; }
   .principle { padding: 28px 0 !important; border-right: none !important; padding-left: 0 !important; }
-  .bench-list { grid-template-columns: 50px 1fr 90px; }
-  .bench-list .why { display: none; }
   nav.top .lab-time { display: none; }
   .hero .scroll-hint { display: none; }
 }
