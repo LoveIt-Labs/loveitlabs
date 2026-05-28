@@ -266,15 +266,17 @@ details.services a:hover .arrow { color: var(--accent); }
   text-wrap: balance;
 }
 .hero h1 .rotator {
-  display: inline-block;
-  position: relative;
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 400;
   color: var(--accent);
   letter-spacing: -0.02em;
-  vertical-align: baseline;
-  white-space: nowrap;
+}
+.hero h1 .rotator .punct {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 500;
+  color: var(--fg);
 }
 .hero h1 .rotator span {
   display: inline-block;
