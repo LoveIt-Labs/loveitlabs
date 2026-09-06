@@ -13,14 +13,15 @@
   // ───── 1. rotating hero word ────────────────────────────
   const WORDS = [
     "love",
-    "obsess over",
-    "can't stop thinking about",
-    "dream about",
-    "ship for ourselves",
-    "would refuse to delete",
+    "need",
+    "miss",
+    "want",
+    "use",
+    "crave",
   ];
   const rotator = document.getElementById("rotator");
-  if (rotator) {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (rotator && !prefersReducedMotion.matches) {
     let i = 0;
     const swap = () => {
       const span = rotator.querySelector("span");
